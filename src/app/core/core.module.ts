@@ -16,6 +16,8 @@ import { HttpCacheService } from './http/http-cache.service';
 import { ApiPrefixInterceptor } from './http/api-prefix.interceptor';
 import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 import { CacheInterceptor } from './http/cache.interceptor';
+import { FooterComponent } from './shell/footer/footer.component';
+import { ContentComponent } from './shell/content/content.component';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import { CacheInterceptor } from './http/cache.interceptor';
   ],
   declarations: [
     HeaderComponent,
-    ShellComponent
+    ShellComponent,
+    FooterComponent,
+    ContentComponent
   ],
   providers: [
     AuthenticationService,
