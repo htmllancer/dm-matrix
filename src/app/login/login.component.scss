@@ -1,6 +1,7 @@
 @import "src/theme/theme-variables";
 @import "~bootstrap/scss/mixins/_breakpoints";
 
+/*
 .login-container {
   position: absolute;
   top: 0;
@@ -8,6 +9,7 @@
   left: 0;
   right: 0;
 }
+*/
 
 .login-box {
   display: flex;
@@ -26,4 +28,34 @@
   .container {
     width: 100%;
   }
+}
+
+
+
+.login-wrapper {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  background: url(../../assets/images/login-bg.jpg) 0 0 no-repeat;
+  overflow: hidden;
+
+  .login-content {
+    width: 600px;
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    background: white;
+  }
+
+  .container {
+
+    .twelve input {
+      width: 100%;
+    }
+
+    .txt2center {
+      text-align: center;
+    }
+
+  }
+
 }
