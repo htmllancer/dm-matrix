@@ -1,0 +1,17 @@
+<div class="grid-component">
+
+  <div class="section" *ngFor="let section of formLayout">
+    <div class="grid-wrapper">
+      <div class="grid-row" *ngFor="let rows of section.items">
+          <div class="grid-col-{{section.gridColumns}}" *ngFor="let col of rows.items">
+            Col
+          </div>
+      </div>
+      <button (click)="section.add()">Добавить ряд</button>
+    </div>
+
+  </div>
+
+  <button (click)="addSection()">Добавить секцию</button> <input type="number" [(ngModel)]="colNumber" />
+
+</div>

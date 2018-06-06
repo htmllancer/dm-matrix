@@ -1,0 +1,12 @@
+@import "src/theme/theme-variables";
+
+.app-footer {
+  height: $footer-height;
+  background: lightgray;
+  margin-left: 250px;
+
+  &.short {
+    margin-left: 50px;
+  }
+}
+

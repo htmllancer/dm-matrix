@@ -1,0 +1,12 @@
+.app-sidebar {
+  float: left;
+  width: 250px;
+  position: relative;
+  left: -250px;
+
+  &.short {
+    width: 50px;
+    left: -50px;
+  }
+
+}

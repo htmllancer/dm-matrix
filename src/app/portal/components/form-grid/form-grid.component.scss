@@ -1,0 +1,44 @@
+.section {
+  border: 1px solid green;
+  margin: 0 20px 20px;
+  box-sizing: border-box;
+}
+
+.grid-wrapper {
+
+}
+
+.grid-row {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grid-col-4 {
+  width: 25%;
+  display: inline-block;
+  min-height: 100px;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+.grid-col-5 {
+  width: 20%;
+  display: inline-block;
+  min-height: 100px;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+.grid-col-3 {
+  width: 33%;
+  display: inline-block;
+  min-height: 100px;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+.grid-col-3:nth-child(2n) {
+  width: 34%;
+}
+
+
+

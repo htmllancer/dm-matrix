@@ -8,7 +8,7 @@ import { LoaderComponent } from './loader/loader.component';
     CommonModule
   ],
   declarations: [
-    LoaderComponent
+    LoaderComponent,
   ],
   exports: [
     LoaderComponent

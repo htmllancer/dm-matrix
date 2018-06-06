@@ -7,3 +7,18 @@ q {
   font-size: 1.2rem;
   quotes: "« " " »";
 }
+
+
+.row {
+  margin: 5px 0;
+}
+
+.columns, .column {
+  background: #f8f9fa;
+  border-radius: 3px;
+  padding: 4px;
+}
+
+.container-fluid {
+  margin: 18px;
+}

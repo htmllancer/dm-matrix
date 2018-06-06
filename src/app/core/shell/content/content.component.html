@@ -1,3 +1,7 @@
-<div class="content-wrapper">
-  <router-outlet></router-outlet>
+<div class="content-wrapper" [ngClass]="{'short': !this.UIData.value.leftMenuExpanded}">
+  <div class="content-wrapper-container">
+    <button (click)="toggleLeftMenu()">Expand</button>
+    <router-outlet></router-outlet>
+  </div>
+  <app-left-sidebar></app-left-sidebar>
 </div>

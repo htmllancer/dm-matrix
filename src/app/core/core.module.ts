@@ -18,6 +18,10 @@ import { ErrorHandlerInterceptor } from './http/error-handler.interceptor';
 import { CacheInterceptor } from './http/cache.interceptor';
 import { FooterComponent } from './shell/footer/footer.component';
 import { ContentComponent } from './shell/content/content.component';
+import { LeftSidebarComponent } from './shell/left-sidebar/left-sidebar.component';
+
+import { UIShareService} from '@app/core/shell/shell.ui-service';
+
 
 @NgModule({
   imports: [
@@ -31,7 +35,8 @@ import { ContentComponent } from './shell/content/content.component';
     HeaderComponent,
     ShellComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    LeftSidebarComponent
   ],
   providers: [
     AuthenticationService,
@@ -40,6 +45,7 @@ import { ContentComponent } from './shell/content/content.component';
     HttpCacheService,
     ApiPrefixInterceptor,
     ErrorHandlerInterceptor,
+    UIShareService,
     CacheInterceptor,
     {
       provide: HttpClient,
