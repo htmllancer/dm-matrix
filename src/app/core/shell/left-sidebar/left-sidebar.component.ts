@@ -9,10 +9,14 @@ import {ShellBaseUIClass} from '@app/core/shell/shell.baseUI.class';
 })
 export class LeftSidebarComponent extends ShellBaseUIClass {
 
+  constructor(private uiService: UIShareService){
+    super(uiService);
+  }
+
   public toggleView() {
-    const _uiState = this.UIData.value;
-    _uiState.leftMenuExpanded = !_uiState.leftMenuExpanded;
-    this.UIData.next(_uiState);
+    this.UIData$.next(
+        Object.assign(this.UIScope, {leftMenuExpanded: !this.UIScope.leftMenuExpanded})
+    );
   }
 
 }
