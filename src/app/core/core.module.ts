@@ -5,6 +5,7 @@ import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
 import { ShellComponent } from './shell/shell.component';
 import { HeaderComponent } from './shell/header/header.component';
 import { RouteReusableStrategy } from './route-reusable-strategy';
@@ -19,8 +20,10 @@ import { CacheInterceptor } from './http/cache.interceptor';
 import { FooterComponent } from './shell/footer/footer.component';
 import { ContentComponent } from './shell/content/content.component';
 import { LeftSidebarComponent } from './shell/left-sidebar/left-sidebar.component';
+import { MainMenuComponent} from './shell/main-menu/main-menu.component';
 
 import { UIShareService} from '@app/core/shell/shell.ui-service';
+
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import { UIShareService} from '@app/core/shell/shell.ui-service';
     ShellComponent,
     FooterComponent,
     ContentComponent,
-    LeftSidebarComponent
+    LeftSidebarComponent,
+    MainMenuComponent
   ],
   providers: [
     AuthenticationService,

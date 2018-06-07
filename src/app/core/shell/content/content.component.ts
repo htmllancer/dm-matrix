@@ -7,7 +7,7 @@ import {ShellBaseUIClass} from '@app/core/shell/shell.baseUI.class';
   styleUrls: ['./content.component.scss']
 })
 
-export class ContentComponent extends ShellBaseUIClass implements OnInit{
+export class ContentComponent extends ShellBaseUIClass implements OnInit {
 
   public toggleLeftMenu() {
     this.UIData$.next(

@@ -3,7 +3,7 @@
  */
 
 // Set Font Awesome font path
-// $fa-font-path: "~@fortawesome/fontawesome-free-webfonts/webfonts";
+$fa-font-path: "~@fortawesome/fontawesome-free-webfonts/webfonts";
 
 // ---------------------------------------------------------------------------
 // Bootstrap variables
@@ -38,6 +38,16 @@ $green:   #28a745;
 $teal:    #20c997;
 $cyan:    #17a2b8;
 
+$header-height: 80px;
+$footer-height: 70px;
+$left-menu-width: 250px;
+$left-menu-shortWidth: 50px;
+$left-menu-bg: #265aa4;
+$left-menu-openBg: #4a75b1;
+$left-menu-activeBg: #fff;
+$footer-bg: #e6e6e6;
+$header-bg: #f5f8fa;
+
 $theme-colors: (
   primary: $blue,
   secondary: $gray-600,
@@ -49,8 +59,6 @@ $theme-colors: (
   dark: $gray-800
 );
 
-$header-height: 80px;
-$footer-height: 70px;
 
 // Use Bootstrap defaults for other variables, imported here so we can access all app variables in one place when used
 // in components.
@@ -60,3 +68,4 @@ $footer-height: 70px;
 
 @import "../assets/css/normalize";
 @import "../assets/css/skeleton";
+@import "../assets/css/font-icon";

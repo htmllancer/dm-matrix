@@ -1,3 +1,4 @@
 <aside class="app-sidebar" [ngClass]="{'short': !UIScope.leftMenuExpanded}">
-  <button (click)="toggleView()" class="button-primary">+</button>
+  <button (click)="toggleView()" class="toggler"><span class="icon-menu"></span></button>
+  <app-main-menu></app-main-menu>
 </aside>

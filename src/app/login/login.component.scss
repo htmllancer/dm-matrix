@@ -36,7 +36,6 @@
   width: 100%;
   min-height: 100%;
   box-sizing: border-box;
-  background: url(../../assets/images/login-bg.jpg) 0 0 no-repeat;
   overflow: hidden;
 
   .login-content {
@@ -44,7 +43,51 @@
     position: absolute;
     top: 0; right: 0; bottom: 0;
     background: white;
+    -webkit-box-shadow: -2px 0px 3px 1px rgba(255,255,255,0.5);
+    -moz-box-shadow: -2px 0px 3px 1px rgba(255,255,255,0.5);
+    box-shadow: -2px 0px 3px 1px rgba(255,255,255,0.5);
   }
+
+  .login-box {
+    h1 {
+      color: #33c3f0;
+      margin-bottom: 60px;
+    }
+    .icon {
+      display: inline-block;
+      position: relative;
+      font-size: 50px;
+      top: 5px;
+      margin-right: 20px;
+    }
+  }
+
+  .beautify {
+    position: absolute;
+    top:0; left: 0;
+    bottom: 0; right: 600px;
+    background: url(../../assets/images/login-bg3.jpg) 0 0 no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    .quote {
+      width: 400px;
+      margin: 0 auto;
+      height: 400px;
+      font-size: 30px;
+      color: white;
+      font-style: italic;
+      text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.5);
+
+      span {
+        display: block;
+        text-align: right;
+      }
+    }
+  }
+
 
   .container {
 

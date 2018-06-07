@@ -1,0 +1,12 @@
+<ul class="main-menu">
+  <li *ngFor="let item of scope$.menuItems" [ngClass]="{'active': item.isActive}">
+    <span class="icon-left" [ngClass]="item.iconClass"></span>
+    <a href={{item.link}}><span>{{item.name}}</span></a>
+    <span [hidden]="!item.subItems" (click)="toggleSubMenu(item)" class="icon" [ngClass]="{'icon-down': !item.subItemsIsOpen, 'icon-up' : item.subItemsIsOpen}"></span>
+    <ul class="main-menu-subItems" [hidden]="!item.subItemsIsOpen">
+      <li *ngFor="let subItem of item.subItems" [ngClass]="{'active': subItem.isActive}">
+        <a href={{subItem.link}}><span>{{subItem.name}}</span></a>
+      </li>
+    </ul>
+  </li>
+</ul>

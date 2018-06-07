@@ -20,3 +20,9 @@ body {
   width: 100%;
   min-width: 1000px;
 }
+
+.short {
+  .main-menu {
+    display: none;
+  }
+}

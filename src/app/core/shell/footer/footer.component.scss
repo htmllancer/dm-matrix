@@ -2,11 +2,11 @@
 
 .app-footer {
   height: $footer-height;
-  background: lightgray;
-  margin-left: 250px;
+  background: $footer-bg;
+  margin-left: $left-menu-width;
 
   &.short {
-    margin-left: 50px;
+    margin-left: $left-menu-shortWidth;
   }
 }
 

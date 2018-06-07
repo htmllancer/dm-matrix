@@ -6,7 +6,7 @@ export class UIShareService {
 
     private storageName = 'UIState';
     private messageSource = new BehaviorSubject(this.getSetting());
-    currentMessage = this.messageSource.asObservable();
+    public readonly currentMessage = this.messageSource.asObservable();
 
     constructor() {
         const _initialData =  this.getSetting();
