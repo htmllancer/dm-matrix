@@ -11,12 +11,16 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { HomeModule } from './home/home.module';
 import { AboutModule } from './about/about.module';
+import { DashboardModule} from '@app/dashboard/dashboard.module';
 
 import { PortalModule } from './portal/portal.module';
 
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+
+import { CanDeactivateGuard} from '@app/shared/guards/canDeactivate.guard';
+
 
 @NgModule({
   imports: [
@@ -32,11 +36,11 @@ import { AppRoutingModule } from './app-routing.module';
     AboutModule,
     PortalModule,
     LoginModule,
+    DashboardModule,
     AppRoutingModule
   ],
   declarations: [AppComponent],
-  providers: [
-  ],
+  providers: [CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

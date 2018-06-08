@@ -1,22 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NavigationEnd, Router,  Event } from '@angular/router';
+import {BehaviorSubject, Observable} from 'rxjs';
+
 
 interface MenuItem {
     isActive: boolean;
     name: string;
-    subItems: Array<MenuItem>;
-    subItemsIsOpen: boolean;
+    subItems?: Array<MenuItem>;
+    subItemsIsOpen?: boolean;
     link: string;
-    iconClass: string;
+    iconClass?: string;
 }
 
-interface MainMenu {
-    menuItems: Array<MenuItem>;
-}
 
 const fakeData = {
   menuItems: [
       {
-        isActive: true,
+        isActive: false,
         name: 'Dashboard',
         link: '/dashboard',
         iconClass: 'icon-uniE09B'
@@ -24,7 +24,7 @@ const fakeData = {
       {
         isActive: false,
         name: 'Project Info',
-        link: '/project',
+        link: '/portal',
         iconClass: 'icon-uniE005',
         subItemsIsOpen: true,
         subItems: [
@@ -150,27 +150,46 @@ const fakeData = {
   ]
 };
 
-
-
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.scss']
 })
-export class MainMenuComponent implements OnInit {
+export class MainMenuComponent implements OnInit, OnDestroy {
 
-  scope$: any;
+    scope$: Array<MenuItem>;
+    routerSubject: any;
 
-  constructor() {
-    this.scope$ = fakeData;
-  }
+    constructor(private router: Router) {
+        this.scope$ = fakeData.menuItems;
+    }
 
-  ngOnInit() {
+    ngOnInit() {
+        this.toggleActive(this.router.url);
+        this.routerSubject = this.router.events.subscribe((event: Event) => {
+            if (event instanceof NavigationEnd) {
+                this.toggleActive(event.urlAfterRedirects);
+            }
+        });
+    }
 
-  }
+    ngOnDestroy() {
+        this.routerSubject.unsubscribe();
+    }
 
-  toggleSubMenu(node: MenuItem) {
-    node.subItemsIsOpen = !node.subItemsIsOpen;
-  }
+    toggleSubMenu(node: MenuItem) {
+        node.subItemsIsOpen = !node.subItemsIsOpen;
+    }
 
+    toggleActive(url: string) {
+        const _prev = this.scope$.find(item => item.isActive);
+        const _current = this.scope$.find(item => item.link === url);
+        if (_prev) {
+            _prev.isActive = false;
+        }
+
+        if (_current) {
+            _current.isActive = true;
+        }
+    }
 }

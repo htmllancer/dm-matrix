@@ -1,12 +1,5 @@
 @import "src/theme/theme-variables";
 
-.short {
-  .main-menu {
-    display: none;
-  }
-}
-
-
 .main-menu {
   margin: 0 0;
 
@@ -38,14 +31,20 @@
     &.active {
       background: $left-menu-activeBg;
 
-      span.icon-left {
+      .icon-left {
         color: #0fa0ce;
       }
-
 
       a {
         color: #5e85bc;
       }
+
+      .main-menu-subItems {
+        a {
+          color: white;
+        }
+      }
+
     }
 
     a {

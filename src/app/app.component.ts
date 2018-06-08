@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router, Event, NavigationEnd, NavigationStart, NavigationError, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { merge } from 'rxjs';
@@ -31,7 +31,6 @@ export class AppComponent implements OnInit {
 
     log.debug('init');
 
-
     // Setup translations
     this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);
 
@@ -56,6 +55,8 @@ export class AppComponent implements OnInit {
           this.titleService.setTitle(this.translateService.instant(title));
         }
       });
+
+
   }
 
 }
