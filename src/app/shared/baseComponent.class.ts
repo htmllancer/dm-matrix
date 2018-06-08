@@ -9,7 +9,7 @@ export class BaseComponentClass implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        console.warn(this.isDirty);
+
     }
 
     ngOnDestroy() {
@@ -21,3 +21,18 @@ export class BaseComponentClass implements OnInit, OnDestroy {
     }
 
 }
+
+/*
+    this.confirmationService.confirm({
+        message: ` Hey All, do you like PrimeNG? ${this.isDirty}`,
+        header: 'Greeting',
+        icon: 'fa fa-question-circle',
+        accept: () => {
+            console.warn('accept');
+        },
+        reject: () => {
+            console.warn('reject');
+        }
+    });
+
+ */

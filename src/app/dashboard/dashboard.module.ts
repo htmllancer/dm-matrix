@@ -7,13 +7,14 @@ import { SharedModule } from '@app/shared';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from '@app/dashboard/dashboard-routing.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
     SharedModule,
     DashboardRoutingModule,
-    TranslateModule
+    TranslateModule,
   ],
   declarations: [DashboardComponent]
 })

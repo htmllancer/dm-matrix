@@ -4,6 +4,7 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { ShellComponent } from './shell/shell.component';
@@ -22,6 +23,9 @@ import { ContentComponent } from './shell/content/content.component';
 import { LeftSidebarComponent } from './shell/left-sidebar/left-sidebar.component';
 import { MainMenuComponent} from './shell/main-menu/main-menu.component';
 
+import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/primeng';
+
 import { UIShareService} from '@app/core/shell/shell.ui-service';
 
 
@@ -32,7 +36,9 @@ import { UIShareService} from '@app/core/shell/shell.ui-service';
     HttpClientModule,
     TranslateModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    ButtonModule,
+    ConfirmDialogModule,
   ],
   declarations: [
     HeaderComponent,
