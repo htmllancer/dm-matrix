@@ -11,7 +11,6 @@ import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { HomeModule } from './home/home.module';
-import { AboutModule } from './about/about.module';
 import { DashboardModule} from '@app/dashboard/dashboard.module';
 
 import { PortalModule } from './portal/portal.module';
@@ -35,7 +34,6 @@ import { CanDeactivateGuard} from '@app/shared/guards/canDeactivate.guard';
     CoreModule,
     SharedModule,
     HomeModule,
-    AboutModule,
     PortalModule,
     LoginModule,
     DashboardModule,
