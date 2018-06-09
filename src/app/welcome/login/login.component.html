@@ -61,13 +61,6 @@
   </div>
 </div-->
 
-<div class="login-wrapper">
-  <div class="beautify">
-  </div>
-  <div class="login-content">
-
-      <div class="login-box">
-          <h1><span class="icon-uniE09B icon"></span>DM Matrix 3.0</h1>
           <!--div>
               <h6 class="d-inline-block">v{{version}}</h6>
               <div class="d-inline-block ml-3" ngbDropdown>
@@ -81,7 +74,7 @@
                   </div>
               </div>
           </div-->
-          <div class="container">
+          <div class="login-component">
                       <form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
                           <div class="alert alert-danger" [hidden]="!error || isLoading" translate>
                               Username or password incorrect.
@@ -122,11 +115,5 @@
                                   <span translate>Login</span>
                               </button>
                           </div>
-
                       </form>
-        </div>
-      </div>
-  </div>
-</div>
-
-
+          </div>

@@ -1,0 +1,55 @@
+@import "src/theme/theme-variables";
+
+.entry-wrapper {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.entry-left {
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 600px;
+  background: url("../../../assets/images/login-bg3.jpg") 0 0 no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.entry-holder {
+  width: 600px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  -webkit-box-shadow: -2px 0 3px 1px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: -2px 0 3px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: -2px 0 3px 1px rgba(255, 255, 255, 0.5);
+}
+
+.entry-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+
+  h1 {
+    color: #33c3f0;
+    margin-bottom: 60px;
+  }
+
+  .icon {
+    display: inline-block;
+    position: relative;
+    font-size: 50px;
+    top: 5px;
+    margin-right: 20px;
+  }
+}

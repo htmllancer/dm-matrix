@@ -15,7 +15,7 @@ import { DashboardModule} from '@app/dashboard/dashboard.module';
 
 import { PortalModule } from './portal/portal.module';
 
-import { LoginModule } from './login/login.module';
+import { WelcomeModule } from '@app/welcome/welcome.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -36,7 +36,7 @@ import { RoutingState } from '@app/core/routeState.service';
     SharedModule,
     HomeModule,
     PortalModule,
-    LoginModule,
+    WelcomeModule,
     DashboardModule,
     AppRoutingModule,
   ],

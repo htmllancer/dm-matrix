@@ -6,6 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ShellComponent } from './shell/shell.component';
+import { EntryShellComponent } from './entry-shell/entry-shell.component';
 import { HeaderComponent } from './shell/header/header.component';
 import { RouteReusableStrategy } from './route-reusable-strategy';
 import { AuthenticationService } from './authentication/authentication.service';
@@ -22,7 +23,7 @@ import { LeftSidebarComponent } from './shell/left-sidebar/left-sidebar.componen
 import { MainMenuComponent} from './shell/main-menu/main-menu.component';
 
 import { ButtonModule } from 'primeng/button';
-import {ConfirmDialogModule, MenuModule,  MenuItem} from 'primeng/primeng';
+import { ConfirmDialogModule, MenuModule,  MenuItem } from 'primeng/primeng';
 
 
 import { UIShareService} from '@app/core/shell/shell.ui-service';
@@ -40,8 +41,9 @@ import { ConfirmationService } from 'primeng/primeng';
     MenuModule
   ],
   declarations: [
-    HeaderComponent,
     ShellComponent,
+    EntryShellComponent,
+    HeaderComponent,
     FooterComponent,
     ContentComponent,
     LeftSidebarComponent,
