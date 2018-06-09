@@ -39,4 +39,10 @@
       </div>
     </div>
   </nav-->
+
+  <div class="user-info">
+    <div class="avatar" (click)="userMenu.toggle($event)"></div>
+    <p-menu #userMenu popup="popup" [model]="userItems"></p-menu>
+  </div>
+
 </header>

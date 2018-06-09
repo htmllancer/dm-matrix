@@ -5,8 +5,6 @@ import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule} from '@app/shared';
-
 
 import { ShellComponent } from './shell/shell.component';
 import { HeaderComponent } from './shell/header/header.component';
@@ -25,7 +23,8 @@ import { LeftSidebarComponent } from './shell/left-sidebar/left-sidebar.componen
 import { MainMenuComponent} from './shell/main-menu/main-menu.component';
 
 import { ButtonModule } from 'primeng/button';
-import { ConfirmDialogModule } from 'primeng/primeng';
+import {ConfirmDialogModule, MenuModule,  MenuItem} from 'primeng/primeng';
+
 
 import { UIShareService} from '@app/core/shell/shell.ui-service';
 import { ConfirmationService } from 'primeng/primeng';
@@ -39,8 +38,8 @@ import { ConfirmationService } from 'primeng/primeng';
     RouterModule,
     ButtonModule,
     ConfirmDialogModule,
+    MenuModule,
     BrowserAnimationsModule,
-    SharedModule
   ],
   declarations: [
     HeaderComponent,
@@ -68,6 +67,9 @@ import { ConfirmationService } from 'primeng/primeng';
       useClass: RouteReusableStrategy
     },
     ConfirmationService
+  ],
+  exports: [
+    MenuModule
   ]
 })
 export class CoreModule {

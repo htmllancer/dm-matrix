@@ -157,7 +157,7 @@ const fakeData = {
 })
 export class MainMenuComponent implements OnInit, OnDestroy {
 
-    scope$: Array<MenuItem>;
+    scope$: MenuItem[];
     routerSubject: any;
 
     constructor(private router: Router) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {MenuItem} from 'primeng/api';
 
 import { AuthenticationService } from '../../authentication/authentication.service';
 import { I18nService } from '../../i18n.service';
@@ -12,12 +13,20 @@ import { I18nService } from '../../i18n.service';
 export class HeaderComponent implements OnInit {
 
   menuHidden = true;
+  userItems: MenuItem[];
 
   constructor(private router: Router,
               private authenticationService: AuthenticationService,
-              private i18nService: I18nService) { }
+              private i18nService: I18nService) {
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.userItems = [
+        {label: 'Edit'},
+        {label: 'Logout', command: () => {this.logout()}}
+    ];
+
+  }
 
   toggleMenu() {
     this.menuHidden = !this.menuHidden;
