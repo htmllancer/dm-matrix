@@ -30,7 +30,7 @@ export class Route {
         path: '',
         component: EntryShellComponent,
         children: routes,
-        data: { reuse: true }
+        data: { reuse: false }
     };
   }
 
