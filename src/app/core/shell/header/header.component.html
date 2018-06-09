@@ -41,7 +41,9 @@
   </nav-->
 
   <div class="user-info">
-    <div class="avatar" (click)="userMenu.toggle($event)"></div>
+    <div class="avatar" (click)="userMenu.toggle($event)">
+      <span class="icon-face"></span>
+    </div>
     <p-menu #userMenu popup="popup" [model]="userItems"></p-menu>
   </div>
 

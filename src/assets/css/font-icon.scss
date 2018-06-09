@@ -24,23 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-down:before {
-  content: "\e313";
-}
-.icon-left:before {
-  content: "\e314";
-}
-.icon-right:before {
-  content: "\e315";
-}
-.icon-up:before {
-  content: "\e316";
-}
-.icon-vdots:before {
-  content: "\e5d4";
-}
-.icon-menu:before {
-  content: "\e8ee";
+
+.icon-face:before {
+  content: "\e905";
 }
 .icon-uniE000:before {
   content: "\e000";
@@ -527,4 +513,22 @@
 }
 .icon-corporate_workspace:before {
   content: "\e904";
+}
+.icon-down:before {
+  content: "\e313";
+}
+.icon-left:before {
+  content: "\e314";
+}
+.icon-right:before {
+  content: "\e315";
+}
+.icon-up:before {
+  content: "\e316";
+}
+.icon-vdots:before {
+  content: "\e5d4";
+}
+.icon-menu:before {
+  content: "\e8ee";
 }
