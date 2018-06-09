@@ -13,7 +13,7 @@ export class LoaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.warn('app-loader');
+
   }
 
 }

@@ -7,6 +7,7 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 
 import { environment } from '@env/environment';
 import { Logger, I18nService } from '@app/core';
+import {RoutingState} from '@app/core/routeState.service';
 
 const log = new Logger('App');
 
@@ -21,7 +22,11 @@ export class AppComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private titleService: Title,
               private translateService: TranslateService,
-              private i18nService: I18nService) { }
+              private i18nService: I18nService,
+              private routingState: RoutingState) {
+
+      routingState.loadRouting(); // START ROUTING HISTORY
+  }
 
   ngOnInit() {
     // Setup logger

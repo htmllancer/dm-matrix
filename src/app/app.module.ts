@@ -20,6 +20,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { CanDeactivateGuard} from '@app/shared/guards/canDeactivate.guard';
+import { RoutingState } from '@app/core/routeState.service';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { CanDeactivateGuard} from '@app/shared/guards/canDeactivate.guard';
     AppRoutingModule,
   ],
   declarations: [AppComponent],
-  providers: [CanDeactivateGuard],
+  providers: [CanDeactivateGuard, RoutingState],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

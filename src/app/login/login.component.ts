@@ -5,6 +5,7 @@ import { finalize } from 'rxjs/operators';
 
 import { environment } from '@env/environment';
 import { Logger, I18nService, AuthenticationService } from '@app/core';
+import {RoutingState} from '@app/core/routeState.service';
 
 const log = new Logger('Login');
 
@@ -19,18 +20,23 @@ export class LoginComponent implements OnInit {
   error: string;
   loginForm: FormGroup;
   isLoading = false;
+  previousRoute: string;
 
   constructor(private router: Router,
               private formBuilder: FormBuilder,
               private i18nService: I18nService,
-              private authenticationService: AuthenticationService) {
+              private authenticationService: AuthenticationService,
+              private routingState: RoutingState) {
     this.createForm();
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+      this.previousRoute = this.routingState.getPreviousUrl();
+  }
 
   login() {
     this.isLoading = true;
+
     this.authenticationService.login(this.loginForm.value)
       .pipe(finalize(() => {
         this.loginForm.markAsPristine();
@@ -38,7 +44,10 @@ export class LoginComponent implements OnInit {
       }))
       .subscribe(credentials => {
         log.debug(`${credentials.username} successfully logged in`);
-        this.router.navigate(['/'], { replaceUrl: true });
+
+        const _url =  this.previousRoute ? this.previousRoute : '/';
+        this.router.navigate([_url], { replaceUrl: true });
+
       }, error => {
         log.debug(`Login error: ${error}`);
         this.error = error;

@@ -4,7 +4,6 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ShellComponent } from './shell/shell.component';
 import { HeaderComponent } from './shell/header/header.component';
@@ -38,8 +37,7 @@ import { ConfirmationService } from 'primeng/primeng';
     RouterModule,
     ButtonModule,
     ConfirmDialogModule,
-    MenuModule,
-    BrowserAnimationsModule,
+    MenuModule
   ],
   declarations: [
     HeaderComponent,
