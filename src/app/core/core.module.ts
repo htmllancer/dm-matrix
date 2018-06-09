@@ -5,6 +5,7 @@ import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule} from '@app/shared';
 
 
 import { ShellComponent } from './shell/shell.component';
@@ -29,7 +30,6 @@ import { ConfirmDialogModule } from 'primeng/primeng';
 import { UIShareService} from '@app/core/shell/shell.ui-service';
 import { ConfirmationService } from 'primeng/primeng';
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -39,7 +39,8 @@ import { ConfirmationService } from 'primeng/primeng';
     RouterModule,
     ButtonModule,
     ConfirmDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   declarations: [
     HeaderComponent,
@@ -47,7 +48,7 @@ import { ConfirmationService } from 'primeng/primeng';
     FooterComponent,
     ContentComponent,
     LeftSidebarComponent,
-    MainMenuComponent
+    MainMenuComponent,
   ],
   providers: [
     AuthenticationService,

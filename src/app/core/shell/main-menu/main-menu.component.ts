@@ -6,7 +6,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
 interface MenuItem {
     isActive: boolean;
     name: string;
-    subItems?: Array<MenuItem>;
+    subItems?: MenuItem[];
     subItemsIsOpen?: boolean;
     link: string;
     iconClass?: string;

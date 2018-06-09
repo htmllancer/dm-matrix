@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ShellBaseUIClass} from '@app/core/shell/shell.baseUI.class';
+import {UIShareService} from '@app/core/shell/shell.ui-service';
 
 @Component({
   selector: 'app-content',
@@ -8,6 +9,13 @@ import {ShellBaseUIClass} from '@app/core/shell/shell.baseUI.class';
 })
 
 export class ContentComponent extends ShellBaseUIClass implements OnInit {
+
+   isLoading: boolean;
+
+  constructor( uiDataService: UIShareService) {
+    super(uiDataService);
+    this.isLoading = true;
+  }
 
   public toggleLeftMenu() {
     this.UIData$.next(

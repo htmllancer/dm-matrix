@@ -4,10 +4,12 @@ import { Observable, Observer } from 'rxjs';
 
 export class BaseComponentClass implements OnInit, OnDestroy {
 
-    isDirty: boolean;
+    isDirty: Observable<boolean> | Promise<boolean> | boolean;
+    isLoading: Observable<boolean> | Promise<boolean> | boolean;
 
     constructor(private confirmationService: ConfirmationService) {
         this.isDirty = false;
+        this.isLoading = true;
     }
 
     ngOnInit() {

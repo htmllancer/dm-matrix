@@ -12,6 +12,8 @@ export class LoaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.warn('app-loader');
+  }
 
 }
