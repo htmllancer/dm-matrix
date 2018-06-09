@@ -43,5 +43,4 @@ export class BaseComponentClass implements OnInit, OnDestroy {
         });
 
     }
-
 }

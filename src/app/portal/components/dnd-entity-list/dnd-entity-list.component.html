@@ -1,0 +1,19 @@
+<div class="dnd-entities-list">
+
+  <div *ngFor="let entity of list"
+       pDraggable="dd"
+       (onDragStart)="dragStart($event,entity)"
+       (onDragEnd)="dragEnd($event)">
+    <span>{{entity.name}}</span> / <span>{{entity.type}}</span>
+  </div>
+
+
+  <div style="height: 400px; border: 1px solid red;" pDroppable="dd"
+    (onDrop)="drop($event)"
+    [ngClass]="{'ui-state-highlight': draggedEntity}">
+    <div *ngFor="let selected of selectedEntities">
+      <span>{{selected.name}}</span> / <span>{{selected.type}}</span>
+    </div>
+  </div>
+
+</div>

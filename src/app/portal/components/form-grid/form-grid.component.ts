@@ -29,10 +29,8 @@ export class FormGridComponent implements OnInit {
 
   public addSection() {
     const section = new GridSectionModel(this.colNumber);
-    console.warn(this.colNumber);
     section.add();
     this.formLayout = [...this.formLayout, section];
-    console.warn(this.formLayout);
   }
 
 }
