@@ -27,7 +27,7 @@ import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/primeng';
 
 import { UIShareService} from '@app/core/shell/shell.ui-service';
-
+import { ConfirmationService } from 'primeng/primeng';
 
 
 @NgModule({
@@ -39,6 +39,7 @@ import { UIShareService} from '@app/core/shell/shell.ui-service';
     RouterModule,
     ButtonModule,
     ConfirmDialogModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     HeaderComponent,
@@ -64,7 +65,8 @@ import { UIShareService} from '@app/core/shell/shell.ui-service';
     {
       provide: RouteReuseStrategy,
       useClass: RouteReusableStrategy
-    }
+    },
+    ConfirmationService
   ]
 })
 export class CoreModule {

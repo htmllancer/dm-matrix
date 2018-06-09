@@ -1,10 +1,12 @@
-import {OnDestroy, OnInit} from '@angular/core';
+import { OnDestroy, OnInit } from '@angular/core';
+import { ConfirmationService, Message} from 'primeng/components/common/api';
+import { Observable, Observer } from 'rxjs';
 
 export class BaseComponentClass implements OnInit, OnDestroy {
 
     isDirty: boolean;
 
-    constructor() {
+    constructor(private confirmationService: ConfirmationService) {
         this.isDirty = false;
     }
 
@@ -16,23 +18,28 @@ export class BaseComponentClass implements OnInit, OnDestroy {
 
     }
 
-    canDeactivate(): boolean {
-        return !this.isDirty;
+    canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+
+        if (!this.isDirty) {
+            return true;
+        }
+
+        return Observable.create((observer: Observer<boolean>) => {
+            this.confirmationService.confirm({
+                key: 'dirtyConfirmation',
+                message: 'You have unsaved changes. Are you sure you want to leave this page?',
+                header: 'Attention',
+                accept: () => {
+                    observer.next(true);
+                    observer.complete();
+                },
+                reject: () => {
+                    observer.next(false);
+                    observer.complete();
+                }
+            });
+        });
+
     }
 
 }
-
-/*
-    this.confirmationService.confirm({
-        message: ` Hey All, do you like PrimeNG? ${this.isDirty}`,
-        header: 'Greeting',
-        icon: 'fa fa-question-circle',
-        accept: () => {
-            console.warn('accept');
-        },
-        reject: () => {
-            console.warn('reject');
-        }
-    });
-
- */

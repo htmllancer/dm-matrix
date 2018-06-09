@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { Route, extract } from '@app/core';
 import { DashboardComponent } from '@app/dashboard/dashboard.component';
-import { CanDeactivateGuard} from '@app/shared/guards/canDeactivate.guard';
+import { CanDeactivateGuard } from '@app/shared/guards/canDeactivate.guard';
 
 
 const routes: Routes = [

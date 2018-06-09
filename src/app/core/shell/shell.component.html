@@ -1,4 +1,9 @@
 <app-header></app-header>
 <app-content></app-content>
 <app-footer></app-footer>
-
+<p-confirmDialog key="dirtyConfirmation" width="425" #cd>
+    <footer>
+        <button type="button" pButton icon="fa-check" label="Yes" (click)="cd.accept()"></button>
+        <button type="button" pButton icon="fa-close" label="No" (click)="cd.reject()"></button>
+    </footer>
+</p-confirmDialog>
